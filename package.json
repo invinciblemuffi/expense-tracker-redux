@@ -1,0 +1,11 @@
+{
+  "name": "expense-tracker-redux",
+  "version": "1.0.0",
+  "description": "Expense Tracker App using Redux, Thunk, Reselect and Styled Components",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run start"
+  },
+  "author": "Mufaddal Barwaniwala",
+  "license": "ISC"
+}
