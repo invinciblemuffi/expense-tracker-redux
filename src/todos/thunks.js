@@ -3,6 +3,7 @@ import {
   loadTodosSuccess,
   loadTodosFailure,
   createTodo,
+  removeTodo,
 } from "./actions";
 
 export const loadTodos = () => async (dispatch, getState) => {
@@ -30,6 +31,18 @@ export const addTodoRequest = (name) => async (dispatch) => {
     dispatch(createTodo(todo));
   } catch (error) {
     dispatch(displayAlert(error));
+  }
+};
+
+export const removeTodoRequest = (id) => async (dispatch) => {
+  try {
+    const resp = await fetch(`http://localhost:3002/api/v1/todo/delete/${id}`, {
+      method: "delete",
+    });
+    const removedTodo = await resp.json();
+    dispatch(removeTodo(removedTodo));
+  } catch (e) {
+    dispatch(displayAlert(e));
   }
 };
 

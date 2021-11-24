@@ -2,7 +2,7 @@ import React from "react";
 
 const TodoListItem = ({ todo, onRemovePressed, onMarkComplete }) => (
   <div className="todo-item-container">
-    <h3>{todo.text}</h3>
+    <h3>{todo.todoName}</h3>
     <div className="buttons-container">
       {todo.isCompleted ? null : (
         <button
@@ -14,7 +14,7 @@ const TodoListItem = ({ todo, onRemovePressed, onMarkComplete }) => (
       )}
       <button
         className="remove-button"
-        onClick={() => onRemovePressed(todo.text)}
+        onClick={() => onRemovePressed(todo.id)}
       >
         Remove
       </button>
